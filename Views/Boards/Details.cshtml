@@ -1,0 +1,47 @@
+﻿ @model TermProject_2018136107.Models.Board
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Board</h1>
+<hr />
+<h2>[@Html.DisplayFor(model => model.Genre)] @Html.DisplayFor(model => model.Title)</h2>
+
+<div>
+    <div class="h4">
+        @Html.DisplayFor(model => model.Writer) | @Html.DisplayFor(model => model.Date)
+        <div style="display:inline; float:right;">
+            @Html.DisplayNameFor(model => model.View) @Html.DisplayFor(model => model.View) |
+            @Html.DisplayNameFor(model => model.Like) @Html.DisplayFor(model => model.Like)
+        </div>
+    </div>
+
+    <hr />
+    <p>
+        @Html.DisplayFor(model => model.Content)
+    </p>
+    <form style="display:block; margin:0 auto; width:100px; height:75px;" id="like" asp-action="Details">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="Title" />
+        <input type="hidden" asp-for="Date" />
+        <input type="hidden" asp-for="Writer" />
+        <input type="hidden" asp-for="Genre" />
+        <input type="hidden" asp-for="View" />
+        <input type="hidden" asp-for="Like" />
+        <input type="hidden" asp-for="Content" />
+        <a href="#" onclick="return chk_form()" title="Button push lightblue" class="button btnPush btnLightBlue">Like</a>
+    </form>
+</div>
+<hr/>
+<div style="float:right;">
+    <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script>
+    function chk_form() {
+        document.getElementById('like').submit();
+    }
+</script>

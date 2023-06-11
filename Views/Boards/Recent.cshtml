@@ -1,0 +1,78 @@
+﻿@model IEnumerable<TermProject_2018136107.Models.Board> 
+
+@{
+    ViewData["Title"] = "Board";
+}
+
+<div class="container" style="width:200% !important;">
+    <h1>Board</h1>
+
+    <p>
+        <a asp-action="Create">Create New Post</a>
+    </p>
+    <div style="float:right;">
+        <a asp-action="Recent">Recent  |  </a>
+        <a asp-action="Like">Like  |  </a>
+        <a asp-action="MostView">View  |  </a>
+        <a asp-action="Index">Genre</a>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Writer)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.View)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Like)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">
+                            <purple>[@Html.DisplayFor(modelItem => item.Genre)]</purple>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </a>
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Writer)
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.View)
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Like)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

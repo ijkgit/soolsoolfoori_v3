@@ -1,0 +1,159 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-family: "Source Sans Pro" !important;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/* soolsoolfoori*/
+
+body {
+    overflow:hidden;
+    font-family: "Source Sans Pro" !important;
+    font-weight: 300;
+    font-size: 16pt;
+    line-height: 1.75em;
+}
+.main {
+    background: url("/images/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+header, footer {
+    font-weight: 900;
+}
+
+.index {
+    margin: 16rem auto !important;
+    width: 1000px;
+    height: 300px;
+    /*background-color:white !important; */
+    color:white;
+    font-weight: 900;
+}
+h1, h2 {
+    font-weight:bold;
+}
+yellow {
+    color: yellow;
+}
+purple {
+    color:mediumpurple;
+}
+.display-5 {
+    font-size: 5.5rem;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+}
+
+.bg-purple {
+    background-color: mediumpurple !important;
+}
+
+a {
+    color: black;
+}
+a:hover {
+    color: black;
+    text-decoration:none;
+}
+
+    a.button {
+        display: block;
+        position: relative;
+        float: left;
+        width: 120px;
+        padding: 0;
+        margin: 10px 20px 10px 0;
+        font-weight: 600;
+        text-align: center;
+        line-height: 50px;
+        color: #FFF;
+        border-radius: 5px;
+        transition: all 0.2s;
+    }
+.btnLightBlue {
+    background: mediumpurple;
+}
+    .btnLightBlue.btnPush {
+        box-shadow: 0px 5px 0px 0px #1E8185;
+    }
+.btnPush:hover {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.btnLightBlue.btnPush:hover {
+    box-shadow: 0px 0px 0px 0px #1E8185;
+}

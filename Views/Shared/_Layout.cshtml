@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SOOLSOOLFOORI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="margin-bottom: -60px;">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-purple border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" style="margin-left:-20rem;" asp-controller="Home" asp-action="Index"><yellow style="font-size: 2rem">SOOLSOOLFOORI</yellow></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="color:white !important;" asp-area="" asp-controller="Boards" asp-action="Index">Boards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="color: white !important;" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="color: yellow !important;" asp-area="" asp-controller="Membership" asp-action="Login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" >
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bg-purple" style="transform: translateY(0%);">
+        <div class="container" style="padding: 0.7em; max-width:inherit; margin:auto;">
+            &copy; <yellow>SOOLSOOLFOORI </yellow>- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="n" style="float:right;margin-right:1em;display:inline-block;text-align:right;"><a href="https://develop247.tistory.com/" target="_blank"><yellow style="text-align:right;">Made by Jay Im</yellow></a></div>
+        </div>
+       
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

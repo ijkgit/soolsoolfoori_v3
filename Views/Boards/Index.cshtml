@@ -1,0 +1,88 @@
+﻿@model TermProject_2018136107.Models.BoardGenreViewModel
+
+@{
+    ViewData["Title"] = "Board";
+}
+
+<div class="container" style="width:200% !important;">
+    <h1>Board</h1>
+
+    <p>
+        <a asp-action="Create">Create New Post</a>
+    </p>
+
+    <!-- 검색 기능 추가 update : 2022-11-15-->
+    <form asp-controller="Boards" asp-action="Index" method="get">
+        <p>
+            <select asp-for="DrinkGenre" asp-items="Model.Genres">
+                <option value="">All</option>
+            </select>
+
+            Title: <input type="text" asp-for="SearchString" />
+
+            <input type="submit" value="Search" />
+        </p>
+        <div style="float:right;">
+            <a asp-action="Recent">Recent  |  </a>
+            <a asp-action="Like">Like  |  </a>
+            <a asp-action="MostView">View  |  </a>
+            <a asp-action="Index">Genre</a>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Drinks[0].Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Drinks[0].Title)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Drinks[0].Writer)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Drinks[0].Date)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Drinks[0].View)
+                </th>
+                <th style="text-align:center;">
+                    @Html.DisplayNameFor(model => model.Drinks[0].Like)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Drinks)
+            {
+                <tr>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">
+                            <purple>[@Html.DisplayFor(modelItem => item.Genre)]</purple>
+                        @Html.DisplayFor(modelItem => item.Title)</a>
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Writer)
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.View)
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.Like)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
